@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>resume page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+<link rel="manifest" href="./icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="maindiv">
+		<div class="leftdiv">	
+		</div>
+		<div class="rightdiv">
+		</div>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript" src="./js/swregister.js"></script>
+<script type="text/javascript">
+	let url=window.location.search;
+	let length=url.length;
+	let proname=url.slice(1,length);
+
+
+	 var indexedDB=window.indexedDB || window.mozIndexedDB || window.msIndexedDB || window.wekitIndexedDB;
+
+     var store;
+     var open;
+     var result;
+     var tx;
+	    var request=indexedDB.open("database",1);
+	    request.onupgradeneeded=function(e){
+	    open=e.target.result
+	    store=open.createObjectStore("resumedata",{keyPath:"name"});
+        }
+        request.onerror=function(e){
+        	console.log("error"+e);
+        }
+        request.onsuccess=function(e){
+        	open=e.target.result;
+        	
+        	tx=open.transaction("resumedata","readwrite");
+        	store=tx.objectStore("resumedata");
+        	var info=store.get(proname);
+        	info.onsuccess=function(data){
+        		console.log(data.target.result);
+        		display(data.target.result);
+        	}
+
+        }
+        var left=document.querySelector(".leftdiv");
+        var right=document.querySelector(".rightdiv");
+        function display(d){
+        	var image=document.createElement("img");
+        	image.src="img2.jpg";
+        	left.append(image);
+        	var head1=document.createElement("h1");
+        	head1.textContent=d.name;
+        	left.append(head1);
+        	var head2=document.createElement("h1");
+        	head2.textContent=d.mobile;
+        	left.append(head2);
+        	var head3=document.createElement("h1");
+        	head3.textContent=d.email;
+        	left.append(head3);
+
+        	var ch3=document.createElement("h3");
+        	ch3.textContent="Educational Details";
+        	right.append(ch3);
+        	for(var i in d.education);{
+        		var ch4=document.createElement("h4");
+        		ch4.textContent=d.education[i].degree;
+        		right.append(ch4);
+        		var ul=document.createElement("ul");
+        		var li=document.createElement("li");
+        		li.textContent=d.education[i].inst;
+        		ul.append(li);
+        		var li1=document.createElement("li");
+        		li1.textContent=d.education[i].per;
+        		ul.append(li1);
+        		var li2=document.createElement("li");
+        		li2.textContent=d.education[i].year;
+        		ul.append(li2);
+        		ch4.append(ul);
+
+        	}
+        }
+</script>

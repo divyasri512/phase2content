@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+<link rel="manifest" href="./icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+
+
+
+<body>
+	<div class="main">
+		<div class="sub">
+		<h1>carrier objective</h1>
+		<select id="career" name="career">
+			<option> select carrier objective </option>
+			<option>To in an enviroment is good</option>
+			<option>to work perfect</option>
+			<option>to work in a reputer company</option>
+		</select>
+	</div>
+	<div class="sub-1">
+		<h1>Personal Info</h1>
+		<input type="text" name="name" id="name" placeholder="enter your name" ><br><br>
+		<input type="text" name="number" id="mobile" placeholder="enter your mobile"><br><br>
+		<input type="text" name="email" id="email" placeholder="enter your email"><br><br>
+	</div>
+	<div class="sub-1">
+		<h2> PG Details</h2>
+		<label for="pdegree">
+		<select id="pdegree" name="pdegree">
+			<option>select your degree</option>
+		    <option>m.tech</option>
+		    <option>MCA</option>
+		    <option>Msc</option>
+		    <option>MBA</option>
+		</select></label><br><br>
+		<label for="pinst">
+		<input type="text" name="pinst" id="pinst" placeholder="enter your institute name"></label><br><br>
+		<label for="pper">
+		<input type="number" name="pper" id="pper" placeholder="enter your percentage"></label><br><br>
+		<label for="pyear">
+		<input type="number" name="pyear" id="pyear" placeholder="enter your year of passing"></label><br><br>
+	</div>
+	<div class="sub-1">
+		<h2> Graduation Details</h2>
+		<label for="gdegree">
+		<select id="gdegree" name="gdegree">
+			<option>select your degree</option>
+		    <option>B.tech</option>
+		    <option>Bsc</option>
+		    <option>BBA</option>
+		    <option>Bcom</option>
+		</select></label><br><br>
+		<label for="ginst">
+		<input type="text" name="ginst" id="ginst" placeholder="enter your institute name"></label><br><br>
+		<label for="gper">
+		<input type="number" name="gper" id="gper" placeholder="enter your percentage"></label><br><br>
+		<label for="gyear">
+		<input type="number" name="gyear" id="gyear" placeholder="enter your year of passing"></label><br><br>
+	</div>
+	<div class="sub-1">
+		<h2> Intermediate Details</h2>
+		<label for="idegree">
+		<select id="idegree" name="idegree">
+			<option>select your degree</option>
+			<option>MPC</option>
+		    <option>Bipc</option>
+		    <option>cec</option>
+		    <option>mec</option>
+		</select></label><br><br>
+		<label for="iinst">
+		<input type="text" name="iinst" id="iinst" placeholder="enter your institute name"></label><br><br>
+		<label for="iper">
+		<input type="number" name="iper" id="iper" placeholder="enter your percentage"></label><br><br>
+		<label for="iyear">
+		<input type="number" name="iyear" id="iyear" placeholder="enter your year of passing"></label><br><br>
+	</div>
+	<div class="sub-1">
+		<h2> school Details</h2>
+		<label for="sdegree">
+		<select id="sdegree" name="sdegree">
+			<option>select your degree</option>
+		    <option>ssc</option>
+		    <option>CBSE</option>
+		    <option>ICBSE</option>
+		</select></label><br><br>
+		<label for="sinst">
+		<input type="text" name="sinst" id="sinst" placeholder="enter your institute name"></label><br><br>
+		<label for="sper">
+		<input type="number" name="sper" id="sper" placeholder="enter your percentage"></label><br><br>
+		<label for="syear">
+		<input type="number" name="syear" id="syear" placeholder="enter your year of passing"></label><br><br>
+	</div>
+</div>
+<button type="button" id="button" name="button" onclick="submitdata()">submit</button>
+</body>
+</html>
+<script type="text/javascript">
+	function submitdata()
+	{
+		var career=document.getElementById("career").value;
+	    var name=document.getElementById("name").value;
+	    var mobile=document.getElementById("mobile").value;
+	    var email=document.getElementById("email").value;
+
+	    var pdegree=document.getElementById("pdegree").value;
+	    var pinst=document.getElementById("pinst").value;
+	    var pper=document.getElementById("pper").value;
+	    var pyear=document.getElementById("pyear").value;
+
+	    var gdegree=document.getElementById("gdegree").value;
+        var ginst=document.getElementById("ginst").value;
+	    var gper=document.getElementById("gper").value;
+	    var gyear=document.getElementById("gyear").value;
+
+	    var idegree=document.getElementById("idegree").value;
+	    var iinst=document.getElementById("iinst").value;
+	    var iper=document.getElementById("iper").value;
+	    var iyear=document.getElementById("iyear").value;
+
+	    var sdegree=document.getElementById("sdegree").value;
+        var sinst=document.getElementById("sinst").value;
+	    var sper=document.getElementById("sper").value;
+	    var syear=document.getElementById("syear").value;
+
+	    /*to check browser compatability*/
+	 var indexedDB=window.indexedDB || window.mozIndexedDB || window.msIndexedDB || window.wekitIndexedDB;
+
+     var store;
+     var open;
+     var result;
+     var tx;
+	    var request=indexedDB.open("database",1);
+	    request.onupgradeneeded=function(e){
+	    open=e.target.result
+	    store=open.createObjectStore("resumedata",{keyPath:"name"});
+        }
+        request.onerror=function(e){
+        	console.log("error"+e);
+        }
+        request.onsuccess=function(e){
+        	open=e.target.result;
+        	
+        	tx=open.transaction("resumedata","readwrite");
+        	store=tx.objectStore("resumedata");
+        	store.put({
+        		career:career,
+		        name:name,
+		        mobile:mobile,
+		        email:email,
+		        education:[
+		        {
+		        	degree:pdegree,
+	                inst:pinst,
+	                per:pper,
+	                year:pyear
+		        },
+		        {
+		        	degree:gdegree,
+	                inst:ginst,
+	                per:gper,
+	                year:gyear
+		        },
+		        {
+		        	degree:idegree,
+	                inst:iinst,
+	                per:iper,
+	                year:iyear
+		        },
+		        {
+		        	degree:sdegree,
+	                inst:sinst,
+	                per:sper,
+	                year:syear
+		        }
+		        ]
+        	});
+        }
+        window.open("index.html","_self");
+	}
+</script>
